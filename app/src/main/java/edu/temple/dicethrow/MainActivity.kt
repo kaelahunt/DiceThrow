@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 
 //some code was referenced from @andron-e's fork on GitHub, due to the fact that I missed the first part of the assignment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), DieFragment.DieRollInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
                 .commit()
 
         findViewById<Button>(R.id.rollDiceButton).setOnClickListener {
+
             (supportFragmentManager
                 .findFragmentById(R.id.fragmentContainerView) as DieFragment).throwDie()
 
@@ -28,6 +29,13 @@ class MainActivity : AppCompatActivity() {
                 .findFragmentById(R.id.fragmentContainerView2) as DieFragment).throwDie()
         }
 
-
     }
+    override fun rollDice(){
+        (supportFragmentManager
+            .findFragmentById(R.id.fragmentContainerView) as DieFragment).throwDie()
+
+        (supportFragmentManager
+            .findFragmentById(R.id.fragmentContainerView2) as DieFragment).throwDie()
+    }
+
 }
