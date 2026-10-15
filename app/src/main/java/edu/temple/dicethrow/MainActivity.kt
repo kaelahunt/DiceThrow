@@ -9,7 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 
 
 //some code was referenced from @andron-e's fork on GitHub, due to the fact that I missed the first part of the assignment
-
+//didn't branch because I didn't have the original code to branch from at the time
 class MainActivity : AppCompatActivity(), DieFragment.DieRollInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
